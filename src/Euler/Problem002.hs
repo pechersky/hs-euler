@@ -1,5 +1,3 @@
-{-# LANGUAGE NumDecimals #-}
-
 module Euler.Problem002
   ( prob002
   )
