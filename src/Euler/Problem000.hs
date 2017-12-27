@@ -10,9 +10,11 @@ prob000 = prob000'
 
 -- naive method
 
+prob000' :: Integer
 prob000' = undefined
 
 
 -- faster calculations
 
+prob000'' :: Integer
 prob000'' = undefined

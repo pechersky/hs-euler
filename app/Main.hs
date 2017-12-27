@@ -1,6 +1,6 @@
 module Main where
 
-import Euler
+import Euler()
 
 main :: IO ()
 main = print "helloworld"

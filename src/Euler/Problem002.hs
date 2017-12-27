@@ -21,8 +21,3 @@ prob002' bound = sum . takeWhile (< bound) . filter even $ fibs
 
 fibs :: [Integer]
 fibs = let fibs' = 0 : scanl (+) 1 fibs' in fibs'
-
-
--- faster calculations
-
-prob002'' = undefined
