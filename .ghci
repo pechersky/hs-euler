@@ -1,0 +1,3 @@
+:set +t
+:set +s
+:set prompt ">  "
