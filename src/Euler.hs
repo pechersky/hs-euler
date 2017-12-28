@@ -6,6 +6,7 @@ module Euler
   , module Euler.Problem005
   , module Euler.Problem006
   , module Euler.Problem007
+  , module Euler.Problem008
   )
   where
 
@@ -16,3 +17,4 @@ import Euler.Problem004
 import Euler.Problem005
 import Euler.Problem006
 import Euler.Problem007
+import Euler.Problem008

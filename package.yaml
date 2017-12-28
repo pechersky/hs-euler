@@ -25,7 +25,9 @@ dependencies:
 library:
   source-dirs: src
   ghc-options: -Wall -fno-warn-unused-top-binds
-  default-extensions: NumDecimals
+  default-extensions:
+    - NumDecimals
+    - ViewPatterns
   dependencies:
     - primes
     - containers
