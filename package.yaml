@@ -24,6 +24,11 @@ dependencies:
 
 library:
   source-dirs: src
+  ghc-options: -Wall -fno-warn-unused-top-binds
+  default-extensions: NumDecimals
+  dependencies:
+    - primes
+    - containers
 
 executables:
   euler-exe:
