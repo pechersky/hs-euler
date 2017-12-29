@@ -42,6 +42,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - euler
+    - template-haskell
 
 tests:
   euler-test:
