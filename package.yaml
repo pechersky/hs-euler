@@ -31,6 +31,8 @@ library:
   dependencies:
     - primes
     - containers
+    - vector
+    - linear
 
 executables:
   euler-exe:
