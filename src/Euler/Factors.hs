@@ -1,5 +1,5 @@
 module Euler.Factors
-  ( toFactors, runFactors
+  ( toFactors, runFactors, numDivisors
   )
   where
 
@@ -35,11 +35,5 @@ toFactors n
 runFactors :: Factors -> Int
 runFactors = IM.foldrWithKey (\k v acc -> acc * (k ^ v)) 1 . unFactors
 
-instance Num Factors where
-  (+) (Factors f) (Factors g) = Factors $ IM.unionWith max f g
-  (-) (Factors f) (Factors g) = Factors $ IM.unionWith min f g
-  (*) (Factors f) (Factors g) = Factors $ IM.unionWith (+) f g
-  negate = id
-  abs = id
-  signum = id
-  fromInteger = toFactors . fromIntegral
+numDivisors :: Factors -> Int
+numDivisors = IM.foldr (\v acc -> acc * (v + 1)) 1 . unFactors
