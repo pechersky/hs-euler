@@ -12,6 +12,19 @@ import           Data.Numbers.Primes (primeFactors)
 newtype Factors = Factors {unFactors :: IntMap Int}
   deriving (Show)
 
+instance Num Factors where
+  (+) (Factors f) (Factors g) = Factors $ IM.unionWith max f g
+  (-) (Factors f) (Factors g) = Factors $ IM.unionWith min f g
+  (*) (Factors f) (Factors g) = Factors $ IM.unionWith (+) f g
+  negate = id
+  abs = id
+  signum = id
+  fromInteger = toFactors . fromIntegral
+
+instance Enum Factors where
+  toEnum = toFactors
+  fromEnum = runFactors
+
 toFactors :: Int -> Factors
 toFactors n
   | n < 1 = error "non-positive not supported"

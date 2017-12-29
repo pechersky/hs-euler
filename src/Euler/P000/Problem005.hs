@@ -15,4 +15,4 @@ prob005 = prob005' 20
 -- naive method
 
 prob005' :: Int -> Integer
-prob005' bound = toInteger . runFactors . foldr (+) 1 . fmap (fromIntegral . fromEnum) $ [1..bound]
+prob005' (toEnum->bound) = toInteger . runFactors . foldr (+) 1 $ [1..bound]
