@@ -1,4 +1,4 @@
-module Euler.Problem009
+module Euler.P000.Problem009
   ( prob009, toInt, isInt'
   )
   where

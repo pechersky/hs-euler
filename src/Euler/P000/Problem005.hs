@@ -1,4 +1,4 @@
-module Euler.Problem005
+module Euler.P000.Problem005
   ( prob005
   )
   where
