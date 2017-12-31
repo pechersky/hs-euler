@@ -1,10 +1,10 @@
 name:                euler
 version:             0.1.0.0
-github:              "githubuser/euler"
+github:              "pechersky/hs-euler"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2017 Author name here"
+author:              "Yakov Pechersky"
+maintainer:          "yakov@pechersky.us"
+copyright:           "2017 Yakov Pechersky"
 
 extra-source-files:
 - README.md
@@ -17,7 +17,7 @@ synopsis:            Short description of your package
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/githubuser/euler#readme>
+description:         Please see the README on Github at <https://github.com/pechersky/hs-euler#readme>
 
 dependencies:
 - base >= 4.7 && < 5
