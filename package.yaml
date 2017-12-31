@@ -36,6 +36,8 @@ library:
     - linear
     - text
     - numerals
+    - time
+    - split
 
 executables:
   euler-exe:
