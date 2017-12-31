@@ -27,6 +27,7 @@ library:
   ghc-options: -Wall -fno-warn-unused-top-binds
   default-extensions:
     - NumDecimals
+    - TypeApplications
     - ViewPatterns
   dependencies:
     - primes
