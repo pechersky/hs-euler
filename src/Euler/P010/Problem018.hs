@@ -27,7 +27,7 @@ prob018' :: Integer
 prob018' = head . foldr1 addLevel . fmap (fmap read . words) $ largeTreeStr
 
 addLevel :: [Integer] -> [Integer] -> [Integer]
-addLevel sl bl = init . tail $ zipWith max ((++ [0]) $ add' ([0] ++ sl)) ([0] ++ add' (sl ++ [0]))
+addLevel sl bl = init . tail $ zipWith max ((++ [0]) $ add' (0 : sl)) (0 : add' (sl ++ [0]))
   where
     add' = zipWith (+) bl
 

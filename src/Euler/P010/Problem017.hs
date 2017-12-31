@@ -31,8 +31,8 @@ prob017 = prob017' 1000
 -- in numerals > 100, due to
 -- https://github.com/roelvandijk/numerals/blame/bcc7f8ac65876bfe3be75ea24cdb3b0e15a5102e/src/Text/Numeral/Language/ENG.hs#L135
 prob017' :: Integer -> Integer
-prob017' limit = fromIntegral $ ands + ((T.length . T.filter isAlpha . T.unwords . catMaybes
-                                       . fmap (gb_cardinal defaultInflection) . enumFromTo 1) limit)
+prob017' limit = fromIntegral $ ands + (T.length . T.filter isAlpha . T.unwords . catMaybes
+                                       . fmap (gb_cardinal defaultInflection) . enumFromTo 1) limit
 
   where
     ands = length . concatMap (const "and") . filter (\x -> x > 100 && (x `mod` 100) /= 0)
