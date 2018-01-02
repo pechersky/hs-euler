@@ -1,11 +1,13 @@
 module Euler.Factors
-  ( toFactors, runFactors, numDivisors
+  ( toFactors, runFactors, numDivisors, divisors
   )
   where
 
 import           Data.List           (group)
+import qualified Data.IntSet         as IS
 import           Data.IntMap.Strict  (IntMap)
 import qualified Data.IntMap.Strict  as IM
+import           Control.Monad       (filterM)
 import           Control.Arrow       ((&&&))
 import           Data.Numbers.Primes (primeFactors)
 
@@ -37,3 +39,9 @@ runFactors = IM.foldrWithKey (\k v acc -> acc * (k ^ v)) 1 . unFactors
 
 numDivisors :: Factors -> Int
 numDivisors = IM.foldr (\v acc -> acc * (v + 1)) 1 . unFactors
+
+divisors :: Factors -> [Int]
+divisors = IS.toDescList . IS.fromList . fmap product . powerset
+         . concatMap ((uncurry . flip) replicate) . IM.assocs . unFactors
+  where
+    powerset = filterM (const [True, False])
