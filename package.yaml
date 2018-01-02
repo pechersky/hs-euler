@@ -29,6 +29,7 @@ library:
     - NumDecimals
     - TypeApplications
     - ViewPatterns
+    - TupleSections
   dependencies:
     - primes
     - containers
