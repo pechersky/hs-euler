@@ -1,5 +1,9 @@
 module Euler.Factors
-  ( toFactors, runFactors, numDivisors, divisors
+  ( toFactors
+  , runFactors
+  , numDivisors
+  , divisors
+  , abundant
   )
   where
 
@@ -45,3 +49,6 @@ divisors = IS.toDescList . IS.fromList . fmap product . powerset
          . concatMap ((uncurry . flip) replicate) . IM.assocs . unFactors
   where
     powerset = filterM (const [True, False])
+
+abundant :: Factors -> Bool
+abundant = (\(x:xs) -> x < sum xs) . divisors
