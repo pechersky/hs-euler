@@ -9,6 +9,8 @@ module Euler.P030.Problem034
  -
  - Note: as 1! = 1 and 2! = 2 are not sums they are not included. -}
 
+import Data.Digits (digits)
+
 prob034 :: Integer
 prob034 = prob034' (factorial 9)
 
@@ -17,7 +19,7 @@ prob034 = prob034' (factorial 9)
 prob034' :: Integer -> Integer
 prob034' = sum . filter digitSum . enumFromTo 3
   where
-    digitSum n = n == (sum . fmap (factorial . read . replicate 1) . show) n
+    digitSum n = n == (sum . fmap factorial . digits 10) n
 
 factorial :: Integer -> Integer
 factorial = product . enumFromTo 1

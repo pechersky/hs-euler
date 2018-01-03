@@ -22,8 +22,9 @@ module Euler.P020.Problem026
  -Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
  -}
 
-import Data.List (maximumBy)
-import Data.Ord  (comparing)
+import Data.Digits (unDigits)
+import Data.List   (maximumBy)
+import Data.Ord    (comparing)
 
 prob026 :: Integer
 prob026 = prob026' (1e3 - 1)
@@ -39,4 +40,4 @@ lencycle n
   | n `mod` 2 == 0 = lencycle (n `div` 2)
   | n `mod` 5 == 0 = lencycle (n `div` 5)
   | otherwise = length . show . head . dropWhile ((/= 0) . (`mod` n))
-              . fmap (read . (flip (replicate) '9')) $ [1..]
+              . fmap (unDigits 10 . (`replicate` 9)) $ [1..]

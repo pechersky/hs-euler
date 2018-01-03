@@ -12,13 +12,15 @@ module Euler.P020.Problem020
  -Find the sum of the digits in the number 100!
  -}
 
+import Data.Digits (digits)
+
 prob020 :: Integer
 prob020 = prob020' 100
 
 -- naive method
 
 prob020' :: Integer -> Integer
-prob020' = sum . fmap (read . replicate 1) . show . factorial
+prob020' = sum . digits 10 . factorial
 
 factorial :: Integer -> Integer
 factorial = product . enumFromTo 1

@@ -14,6 +14,8 @@ module Euler.P030.Problem030
  -
  - Find the sum of all the numbers that can be written as the sum of fifth powers of their digits. -}
 
+import Data.Digits (digits)
+
 prob030 :: Integer
 prob030 = prob030' 5
 
@@ -22,4 +24,4 @@ prob030 = prob030' 5
 prob030' :: Integer -> Integer
 prob030' limit = sum . filter digitsum $ [2 .. limit * (9 ^ limit)]
   where
-    digitsum n = n == (sum . fmap ((^ limit) . read . replicate 1) . show) n
+    digitsum n = n == (sum . fmap (^ limit) . digits 10) n

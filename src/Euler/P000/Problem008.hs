@@ -30,13 +30,15 @@ import Data.List (tails)
  -
  - Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product? -}
 
+import Data.Digits (digits)
+
 prob008 :: Integer
 prob008 = prob008' 13
 
 -- naive method
 
 prob008' :: Integer -> Integer
-prob008' (fromIntegral->window) = maximum . fmap (product . fmap (read . pure) . take window) . tails . show $ bigInt
+prob008' (fromIntegral->window) = maximum . fmap (product . take window) . tails . digits 10 $ bigInt
 
 bigInt :: Integer
 bigInt = read . concat $ [

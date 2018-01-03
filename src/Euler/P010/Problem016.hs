@@ -9,10 +9,12 @@ module Euler.P010.Problem016
  -What is the sum of the digits of the number 2^1000?
  -}
 
+import Data.Digits (digits)
+
 prob016 :: Integer
 prob016 = prob016' 1000
 
 -- naive method
 
 prob016' :: Integer -> Integer
-prob016' = sum . fmap (read . replicate 1) . show @Integer . (2 ^)
+prob016' = sum . digits 10 . (2 ^)
