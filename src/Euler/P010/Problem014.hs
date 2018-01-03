@@ -1,5 +1,5 @@
 module Euler.P010.Problem014
-  ( prob014, lencollatz
+  ( prob014
   )
   where
 

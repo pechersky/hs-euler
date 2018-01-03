@@ -1,5 +1,5 @@
 module Euler.P010.Problem011
-  ( prob011, grid, diagonals
+  ( prob011
   )
   where
 

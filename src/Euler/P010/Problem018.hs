@@ -1,5 +1,5 @@
 module Euler.P010.Problem018
-  ( prob018, smallTreeStr, largeTreeStr, addLevel
+  ( prob018
   )
   where
 

@@ -1,5 +1,5 @@
 module Euler.P020.Problem026
-  ( prob026, lencycle
+  ( prob026
   )
   where
 
