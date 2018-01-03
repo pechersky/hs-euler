@@ -32,7 +32,7 @@ pythagoreans = do
   b <- [1..a]
   let c = toInt (sqrt . fromIntegral $ sq a + sq b :: Double)
   guard (isJust c)
-  return (a, b, fromJust c)
+  pure (a, b, fromJust c)
   where
     sq = (^ (2 :: Integer))
 

@@ -51,7 +51,7 @@ diagonals vec = do
       w = V.length (V.head vec)
   start <- [V2 x y | x <- [0..w-1], y <- [0..h-1]]
   dir <- directions
-  return $ fmap fromJust . takeWhile isJust . fmap (vec !) $ iterate (+ dir) start
+  pure $ fmap fromJust . takeWhile isJust . fmap (vec !) $ iterate (+ dir) start
 
 directions :: [V2 Int]
 directions = [

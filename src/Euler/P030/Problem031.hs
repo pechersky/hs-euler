@@ -27,4 +27,4 @@ prob031' value = fromIntegral . length $ go value coins [[]]
     go n (c:cs) xs = go n cs xs ++ do
       subxs <- xs
       guard (c + sum subxs <= value)
-      go (n - c) (c:cs) (return (c : subxs))
+      go (n - c) (c:cs) (pure (c : subxs))
