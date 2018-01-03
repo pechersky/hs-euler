@@ -40,12 +40,6 @@ collatz = (++ [1]) . unfoldr go
       | even n    = Just (n, n `div` 2)
       | otherwise = Just (n, 3 * n + 1)
 
-fix :: (a -> a) -> a
-fix f = let x = f x in x
-
-memoize :: (Int -> a) -> (Int -> a)
-memoize f = (fmap f [0..] !!)
-
 lencollatz :: Int -> IntMap Int
 lencollatz limit = imap
   where

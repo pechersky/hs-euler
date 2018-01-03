@@ -1,5 +1,5 @@
 module Euler.P020.Problem025
-  ( prob025, fib
+  ( prob025, fib, fix, memoize
   )
   where
 
