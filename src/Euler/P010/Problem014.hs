@@ -55,4 +55,4 @@ lencollatz limit = imap
       | n' > limit = 1 + go n'
       | otherwise  = 1 + imap IM.! n'
       where
-        n' = if even n then (n `div` 2) else (3 * n + 1)
+        n' = if even n then n `div` 2 else 3 * n + 1

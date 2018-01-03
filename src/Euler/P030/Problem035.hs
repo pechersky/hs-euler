@@ -11,6 +11,7 @@ module Euler.P030.Problem035
  -
  - How many circular primes are there below one million? -}
 
+import Data.List           (tails)
 import Data.Digits         (digits, unDigits)
 import Data.Numbers.Primes (primes, isPrime)
 
@@ -22,5 +23,5 @@ prob035 = prob035' 1e6
 prob035' :: Integer -> Integer
 prob035' limit = fromIntegral . length . filter circular . takeWhile (< limit) $ primes
   where
-    circular n = all isPrime . fmap (unDigits 10). permute . digits 10 $ n
-    permute xs = take (length xs) . fmap (take (length xs)) . iterate (drop 1) . cycle $ xs
+    circular = all isPrime . fmap (unDigits 10). permute . digits 10
+    permute xs = take (length xs) . fmap (take (length xs)) . tails . cycle $ xs

@@ -15,4 +15,4 @@ prob007 = prob007' 10001
 -- naive method
 
 prob007' :: Integer -> Integer
-prob007' = (primes !!) . fromIntegral . (subtract 1)
+prob007' = (primes !!) . fromIntegral . subtract 1

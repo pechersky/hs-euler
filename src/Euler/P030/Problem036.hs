@@ -17,7 +17,7 @@ prob036 = prob036' 1e6
 -- naive method
 
 prob036' :: Integer -> Integer
-prob036' limit = sum . filter pal . enumFromTo 1 $ limit
+prob036' = sum . filter pal . enumFromTo 1
   where
     pal n = all palindrome [digits 10 n, digits 2 n]
     palindrome xs = and $ zipWith (==) xs (reverse xs)
