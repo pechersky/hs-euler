@@ -19,8 +19,8 @@ module Euler.P030.Problem038
  - the concatenated product of an integer with (1,2, ... , n) where n > 1?
 -}
 
-import           Data.List   (sort)
-import           Data.Digits (digits, unDigits)
+import Data.List   (sort)
+import Data.Digits (digits, unDigits)
 
 prob038 :: Integer
 prob038 = prob038' 9
