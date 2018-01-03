@@ -1,5 +1,5 @@
 module Euler.P000.Problem009
-  ( prob009, toInt, isInt'
+  ( prob009, pythagoreans
   )
   where
 
