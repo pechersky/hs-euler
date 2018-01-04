@@ -7,6 +7,7 @@ module Euler
   , module Euler.P020.P020
   , module Euler.P030.P030
   , module Euler.P040.P040
+  , module Euler.P050.P050
   )
   where
 
@@ -17,3 +18,4 @@ import Euler.P010.P010
 import Euler.P020.P020
 import Euler.P030.P030
 import Euler.P040.P040
+import Euler.P050.P050
