@@ -2,3 +2,5 @@
 :set +s
 :set prompt ">  "
 :set -XTemplateHaskell
+:def pf \str -> return $ ":! stack exec pointfree -- \"" ++ str ++ "\""
+:def pff \str -> return $ ":! stack exec pointful -- \"" ++ str ++ "\""
