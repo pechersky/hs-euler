@@ -34,7 +34,7 @@ prob051 = prob051' 8
 prob051' :: Integer -> Integer
 prob051' (fromIntegral->limit) = head . head . filter ((== limit) . length) . concatMap p . dropWhile (< 10) $ primes
   where
-    p x = fmap (filter isPrime) $ variants
+    p x = fmap (filter isPrime) variants
       where
         d = Seq.fromList . digits 10 $ x
         poslist = filter (/= []) . powerset $ [0..length d - 2]
