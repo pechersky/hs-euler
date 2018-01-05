@@ -19,12 +19,12 @@ import Data.List           (permutations, sort)
 import Data.Numbers.Primes (primes, isPrime)
 import Data.Digits         (digits, unDigits)
 
-{-prob049 :: Integer-}
+prob049 :: Integer
 prob049 = prob049' 4
 
 -- naive method
 
-{-prob049' :: Integer -> Integer-}
+prob049' :: Integer -> Integer
 prob049' (fromIntegral->limit) = unDigits 10 . concatMap (digits 10) . head . head . filter (/= []) . fmap l $ avail
   where
     avail = takeWhile ((== limit) . length . digits 10) . dropWhile ((< limit) . length . digits 10) $ primes

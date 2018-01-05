@@ -14,12 +14,12 @@ import Data.List           (sort)
 import Data.Digits         (digits)
 import Data.Numbers.Primes (primes)
 
-{-prob041 :: Integer-}
+prob041 :: Integer
 prob041 = prob041' 9
 
 -- naive method
 
-{-prob041' :: Integer -> Integer-}
-prob041' (fromIntegral->limit) = fromIntegral . last . filter pandigital . takeWhile (< 10 ^ limit) $ primes
+prob041' :: Integer -> Integer
+prob041' limit = fromIntegral . last . filter pandigital . takeWhile (< 10 ^ limit) $ primes
   where
     pandigital n = let d = digits 10 n in sort d == [1..length d]
