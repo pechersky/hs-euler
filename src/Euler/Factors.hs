@@ -4,6 +4,7 @@ module Euler.Factors
   , numDivisors
   , divisors
   , abundant
+  , powerset
   )
   where
 
@@ -47,8 +48,9 @@ numDivisors = IM.foldr (\v acc -> acc * (v + 1)) 1 . unFactors
 divisors :: Factors -> [Int]
 divisors = IS.toDescList . IS.fromList . fmap product . powerset
          . concatMap ((uncurry . flip) replicate) . IM.assocs . unFactors
-  where
-    powerset = filterM (const [True, False])
+
+powerset :: [a] -> [[a]]
+powerset = filterM (const [True, False])
 
 abundant :: Factors -> Bool
 abundant = (\(x:xs) -> x < sum xs) . divisors
