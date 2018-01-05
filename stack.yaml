@@ -41,6 +41,8 @@ packages:
 # (e.g., acme-missiles-0.3)
 extra-deps:
   - numerals-0.4.1
+  - megaparsec-6.4.0
+  - parser-combinators-0.4.0
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
