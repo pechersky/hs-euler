@@ -42,6 +42,7 @@ library:
     - digits
     - megaparsec
     - transformers
+    - lens
 
 executables:
   euler-exe:
