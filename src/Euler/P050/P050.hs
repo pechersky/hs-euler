@@ -1,5 +1,6 @@
 module Euler.P050.P050
-  ( module Euler.P050.Problem051
+  ( module Euler.P050.Problem050
+  , module Euler.P050.Problem051
   , module Euler.P050.Problem052
   , module Euler.P050.Problem053
   , module Euler.P050.Problem054
@@ -11,6 +12,7 @@ module Euler.P050.P050
   )
   where
 
+import Euler.P050.Problem050
 import Euler.P050.Problem051
 import Euler.P050.Problem052
 import Euler.P050.Problem053

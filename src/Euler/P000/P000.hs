@@ -1,5 +1,6 @@
 module Euler.P000.P000
-  ( module Euler.P000.Problem001
+  ( module Euler.P000.Problem000
+  , module Euler.P000.Problem001
   , module Euler.P000.Problem002
   , module Euler.P000.Problem003
   , module Euler.P000.Problem004
@@ -11,6 +12,7 @@ module Euler.P000.P000
   )
   where
 
+import Euler.P000.Problem000
 import Euler.P000.Problem001
 import Euler.P000.Problem002
 import Euler.P000.Problem003
