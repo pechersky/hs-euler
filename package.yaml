@@ -41,6 +41,7 @@ library:
     - split
     - digits
     - megaparsec
+    - transformers
 
 executables:
   euler-exe:
