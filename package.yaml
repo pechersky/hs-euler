@@ -43,6 +43,7 @@ library:
     - megaparsec
     - transformers
     - lens
+    - control-monad-omega
 
 executables:
   euler-exe:

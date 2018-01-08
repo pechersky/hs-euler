@@ -1,5 +1,5 @@
 module Euler.P060.Problem065
-  ( prob065
+  ( prob065, sumConvergents
   )
   where
 

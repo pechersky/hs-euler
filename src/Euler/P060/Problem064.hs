@@ -1,5 +1,5 @@
 module Euler.P060.Problem064
-  ( prob064
+  ( prob064, expandSqrt
   )
   where
 
@@ -140,13 +140,13 @@ prob064' limit = fromIntegral . length . filter (even . length . f) $ [2..limit]
   where
     f x = case (toInt (sqrt (fromIntegral x) :: Double)) of
       Just v  -> [v]
-      Nothing -> expand x 0 1
+      Nothing -> expandSqrt x 0 1
 
-expand :: Integer -> Integer -> Integer -> [Integer]
-expand x n d = m : rest
+expandSqrt :: Integer -> Integer -> Integer -> [Integer]
+expandSqrt x n d = m : rest
   where
     m = (truncate (sqrt (fromIntegral x) :: Double) + n) `div` d
     a = n - d * m
     rest
       | d == 1 && n /= 0 = []
-      | otherwise = expand x (negate a) ((x - a * a) `div` d)
+      | otherwise = expandSqrt x (negate a) ((x - a * a) `div` d)
