@@ -5,6 +5,7 @@ module Euler.Factors
   , divisors
   , abundant
   , powerset
+  , totient
   )
   where
 
@@ -54,3 +55,6 @@ powerset = filterM (const [True, False])
 
 abundant :: Factors -> Bool
 abundant = (\(x:xs) -> x < sum xs) . divisors
+
+totient :: Factors -> Int
+totient = IM.foldrWithKey (\k v acc -> acc * (k ^ (v - 1)) * (k - 1)) 1 . unFactors
