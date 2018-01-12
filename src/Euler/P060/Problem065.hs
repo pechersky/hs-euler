@@ -86,8 +86,8 @@ prob065' :: Integer -> Integer
 prob065' (fromIntegral->limit) = sum . digits 10 . numerator . (!! (limit - 1))
                                . fmap (sumConvergents 2) . inits $ exs
   where
-    exs = [1] ++ intercalate [1,1] (fmap pure [2,4..])
+    exs = 1 : intercalate [1,1] (fmap pure [2,4..])
 
 sumConvergents :: Integer -> [Integer] -> Rational
-sumConvergents n [] = (n % 1)
+sumConvergents n [] = n % 1
 sumConvergents n xs = (n % 1) + (1 / foldr1 (\x acc -> x + (1 / acc)) (fmap (% 1) xs))

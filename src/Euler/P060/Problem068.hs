@@ -56,7 +56,7 @@ prob068' limit = maximum . fmap showf . filter f . concatMap go $ [1..(limit*3)]
           p x y z = val == x + y + z
     tup x y z = (x, y, z)
     f [] = False
-    f (x:xs) = all (> (fst' x)) (fmap fst' xs)
+    f (x:xs) = all (> fst' x) (fmap fst' xs)
     fst' (x,_,_) = x
     showf = concatMap (\(x,y,z) -> concatMap show [x,y,z])
 

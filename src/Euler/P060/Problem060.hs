@@ -35,7 +35,7 @@ prob060' = sum . head $ do
   e <- ds
   pure [a,b,c,d,e]
     where
-      ps = takeWhile (< 1e4) $ primes
+      ps = takeWhile (< 1e4) primes
 
 select :: [a] -> [(a, [a])]
 select []     = []

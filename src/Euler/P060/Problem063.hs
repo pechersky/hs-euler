@@ -18,7 +18,7 @@ prob063 = prob063'
 prob063' :: Integer
 prob063' = fromIntegral . sum . takeWhile (> 0) . fmap f $ [1..]
   where
-    log10 x = log x / log 10
+    log10 = logBase 10
     p :: (Integer -> Integer -> Bool) -> Double -> Double -> Bool
     p c b x = floor x `c` (floor (x * log10 b) + 1)
     f :: Double -> Int

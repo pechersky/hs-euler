@@ -30,10 +30,10 @@ prob062' (fromIntegral->limit) = go [1..] M.empty
   where
     go [] _ = 0
     go (v:vs) !m
-      | vs == []  = v
+      | null vs  = v
       | (limit - 1) == length (m ^. at key . non []) = cube $ minimum (m ^. at key . non [])
       | otherwise = go vs nm
       where
         cube = (^ (3::Integer))
         key = sort . digits 10 . cube $ v
-        nm = m & at key <>~ (Just [v])
+        nm = m & at key <>~ Just [v]

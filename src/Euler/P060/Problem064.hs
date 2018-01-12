@@ -138,7 +138,7 @@ prob064 = prob064' 10000
 prob064' :: Integer -> Integer
 prob064' limit = fromIntegral . length . filter (even . length . f) $ [2..limit]
   where
-    f x = case (toInt (sqrt (fromIntegral x) :: Double)) of
+    f x = case toInt (sqrt (fromIntegral x) :: Double) of
       Just v  -> [v]
       Nothing -> expandSqrt x 0 1
 

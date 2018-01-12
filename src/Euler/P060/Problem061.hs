@@ -41,9 +41,9 @@ prob061' :: Integer -> Integer
 prob061' (fromIntegral->limit) = sum . head . filter cyclic . concat
                                . flip evalStateT (IS.fromList [1..limit - 1]) . (!! (limit - 1))
                                . iterate (>>= go) . pure
-                               $ pure <$> (valid !! 0)
+                               $ pure <$> head valid
   where
-    valid = fmap (takeWhile (< 1e4) . dropWhile (< 1e3)) $ shapes
+    valid = fmap (takeWhile (< 1e4) . dropWhile (< 1e3)) shapes
     go :: [[Integer]] -> StateT IS.IntSet [] [[Integer]]
     go xs = do
       x <- lift xs
