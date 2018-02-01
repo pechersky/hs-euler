@@ -44,6 +44,7 @@ library:
     - transformers
     - lens
     - control-monad-omega
+    - data-ordlist
 
 executables:
   euler-exe:
